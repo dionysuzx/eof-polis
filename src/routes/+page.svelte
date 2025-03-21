@@ -100,9 +100,7 @@
           </div>
         </div>
       </div>
-      <div class="polis-wrapper">
-        <div class='polis' data-conversation_id='6ah2kbkpct'></div>
-      </div>
+      <div class='polis' data-conversation_id='6ah2kbkpct'></div>
     </div>
 
     <div class="results-section">
@@ -439,6 +437,15 @@
     box-shadow:
       0 0 20px rgba(0, 0, 0, 0.3),
       0 0 30px rgba(62, 221, 189, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .polis {
+    display: block;
+    line-height: 0;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
   }
 
   .terminal-header {
@@ -479,10 +486,6 @@
     color: rgba(236, 240, 255, 0.7);
   }
 
-  .polis-wrapper {
-    min-height: 600px;
-  }
-
   .polis-cta {
     background: linear-gradient(135deg, rgba(62, 221, 189, 0.1), rgba(62, 221, 189, 0.05));
     border-bottom: 1px solid rgba(62, 221, 189, 0.3);
@@ -514,14 +517,6 @@
     margin: 5px 0 0;
     color: rgba(236, 240, 255, 0.8);
     font-size: 0.95rem;
-  }
-
-  :global(.polis) {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 600px;
   }
 
   /* Results Section */
