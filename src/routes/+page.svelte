@@ -48,12 +48,17 @@
   <div class="container">
     <div class="accordion-section">
       <button class="accordion-button {expandedSection === 'what' ? 'active' : ''}" on:click={() => toggleSection('what')}>
-        <span class="accordion-icon">⚡</span>
+        <span class="accordion-icon">❓</span>
         What is EOF?
         <span class="toggle-icon">{expandedSection === 'what' ? '−' : '+'}</span>
       </button>
-      <div class="accordion-content" style="max-height: {expandedSection === 'what' ? '300px' : '0'}">
+      <div class="accordion-content" style="max-height: {expandedSection === 'what' ? '500px' : '0'}">
         <p>EOF (EVM Object Format) is a proposed restructuring of EVM bytecode into a more formalized container format with separate sections for code and data. It aims to make the EVM more efficient, secure, and easier to analyze.</p>
+        <div class="eof-diagram">
+          <img src="/eof-diagram.png" alt="EOF Structure Diagram" />
+          <div class="image-credit">Image source: <a href="https://inevitableeth.com/en/home/ethereum/upgrades/execution-updates/eof" target="_blank">Inevitable ETH</a></div>
+        </div>
+        <p class="learn-more">Want to learn more? Check out this <a href="https://inevitableeth.com/en/home/ethereum/upgrades/execution-updates/eof" target="_blank">detailed technical overview</a>.</p>
       </div>
 
       <button class="accordion-button {expandedSection === 'why' ? 'active' : ''}" on:click={() => toggleSection('why')}>
@@ -62,7 +67,8 @@
         <span class="toggle-icon">{expandedSection === 'why' ? '−' : '+'}</span>
       </button>
       <div class="accordion-content" style="max-height: {expandedSection === 'why' ? '300px' : '0'}">
-        <p>Community consensus is crucial for Ethereum's evolution. This Polis conversation helps identify areas of agreement and thoughtful disagreements, providing insights that could help shape the future implementation of EOF.</p>
+        <p>Productive conversation is crucial for Ethereum's progress. EOF is a contentious topic, and we want to find out ways to move forward through discovering common ground. This Polis conversation seeks to identify areas of agreement and thoughtful disagreements, providing insights that could help shape the future of planned upgrades like EOF.</p>
+        <p>This is a v1 experiment created by Ethereum community members. We'll use the results of this experiment to learn how we can promote more productive conversations on Ethereum.</p>
       </div>
 
       <button class="accordion-button {expandedSection === 'polis' ? 'active' : ''}" on:click={() => toggleSection('polis')}>
@@ -71,7 +77,8 @@
         <span class="toggle-icon">{expandedSection === 'polis' ? '−' : '+'}</span>
       </button>
       <div class="accordion-content" style="max-height: {expandedSection === 'polis' ? '300px' : '0'}">
-        <p>Polis is an AI-powered conversation platform that helps communities find consensus. You'll vote on statements (agree/disagree/pass) and can add your own statements. The AI identifies patterns of agreement across different viewpoints.</p>
+        <p>Polis uses AI to identify patterns of agreement across different viewpoints. Your votes and statements help shape the conversation.</p>
+        <p class="learn-more">Want to learn more? Check out the <a href="https://compdemocracy.org/Polis/" target="_blank">official Polis documentation</a>.</p>
       </div>
     </div>
 
@@ -84,25 +91,46 @@
         </div>
         <div class="terminal-title">evm_discuss.sh --topic=EOF</div>
       </div>
+      <div class="polis-cta">
+        <div class="polis-cta-content">
+          <span class="polis-cta-icon">💭</span>
+          <div class="polis-cta-text">
+            <h3>Join the Conversation</h3>
+            <p>Vote on statements (agree/disagree/pass) and add your own thoughts to help shape the future of EOF.</p>
+          </div>
+        </div>
+      </div>
       <div class="polis-wrapper">
         <div class='polis' data-conversation_id='6ah2kbkpct'></div>
+      </div>
+    </div>
+
+    <div class="results-section">
+      <button class="results-button {expandedSection === 'results' ? 'active' : ''}" on:click={() => toggleSection('results')}>
+        <span class="results-icon">📊</span>
+        View Conversation Results
+        <span class="toggle-icon">{expandedSection === 'results' ? '−' : '+'}</span>
+      </button>
+      <div class="results-content" style="max-height: {expandedSection === 'results' ? '300px' : '0'}">
+        <p>Coming soon! We'll share the Polis report here shortly after the conversation gets going.</p>
       </div>
     </div>
   </div>
 
   <footer>
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <p class="footer-message">This was a v1 experiment created by Ethereum community members. We'd love to collaborate, hear your thoughts, and work together to help build more productive conversations on Ethereum. Let's chat!</p>
-          <p class="pointer">↓</p>
-        </div>
-      </div>
       <div class="code-line">
+        <div class="horizontal-line"></div>
+      </div>
+      <div class="footer-message-container">
+        <p class="footer-message">This is a v1 experiment created by Ethereum community members. We'd love to hear your thoughts and work together to build more productive conversations on Ethereum. Let's chat!</p>
+        <p class="pointer">↓</p>
+      </div>
+      <div class="social-links">
         <a href="https://warpcast.com/chaskin.eth" target="_blank">@chaskin.eth</a> •
         <a href="https://warpcast.com/dionysuz.eth" target="_blank">@dionysuz.eth</a> •
         <a href="https://warpcast.com/joshdavis.eth" target="_blank">@joshdavis.eth</a> •
-        <a href="https://warpcast.com/rz" target="_blank">@rz</a>
+        <a href="https://warpcast.com/rz" target="_blank">@raymondz.eth</a>
       </div>
     </div>
   </footer>
@@ -353,6 +381,51 @@
     border-bottom: 1px solid rgba(62, 221, 189, 0.3);
   }
 
+  .eof-diagram {
+    margin: 1rem 0;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eof-diagram img {
+    max-width: 100%;
+    width: 90%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(62, 221, 189, 0.2);
+  }
+
+  .image-credit {
+    font-size: 0.8rem;
+    color: rgba(236, 240, 255, 0.6);
+    margin-top: 0.5rem;
+  }
+
+  .image-credit a {
+    color: #3eddbd;
+    text-decoration: none;
+  }
+
+  .image-credit a:hover {
+    text-decoration: underline;
+  }
+
+  .learn-more {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .learn-more a {
+    color: #3eddbd;
+    text-decoration: none;
+  }
+
+  .learn-more a:hover {
+    text-decoration: underline;
+  }
+
   /* Polis Container */
   .polis-container {
     margin-bottom: 80px;
@@ -407,12 +480,102 @@
     min-height: 600px;
   }
 
+  .polis-cta {
+    background: linear-gradient(135deg, rgba(62, 221, 189, 0.1), rgba(62, 221, 189, 0.05));
+    border-bottom: 1px solid rgba(62, 221, 189, 0.3);
+    padding: 20px 25px;
+  }
+
+  .polis-cta-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .polis-cta-icon {
+    font-size: 2rem;
+  }
+
+  .polis-cta-text {
+    flex: 1;
+  }
+
+  .polis-cta-text h3 {
+    margin: 0;
+    color: #3eddbd;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .polis-cta-text p {
+    margin: 5px 0 0;
+    color: rgba(236, 240, 255, 0.8);
+    font-size: 0.95rem;
+  }
+
   :global(.polis) {
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
     min-height: 600px;
+  }
+
+  /* Results Section */
+  .results-section {
+    margin: 40px 0;
+  }
+
+  .results-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(62, 221, 189, 0.1), rgba(62, 221, 189, 0.05));
+    border: 2px solid rgba(62, 221, 189, 0.3);
+    color: #3eddbd;
+    font-family: inherit;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 20px 25px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(62, 221, 189, 0.1);
+  }
+
+  .results-button:hover {
+    background: linear-gradient(135deg, rgba(62, 221, 189, 0.15), rgba(62, 221, 189, 0.1));
+    box-shadow: 0 0 30px rgba(62, 221, 189, 0.2);
+  }
+
+  .results-button.active {
+    background: linear-gradient(135deg, rgba(62, 221, 189, 0.2), rgba(62, 221, 189, 0.1));
+    box-shadow: 0 0 40px rgba(62, 221, 189, 0.3);
+  }
+
+  .results-icon {
+    margin-right: 15px;
+    font-size: 1.4rem;
+  }
+
+  .results-content {
+    background: rgba(20, 25, 40, 0.7);
+    border-radius: 8px;
+    padding: 0 25px;
+    margin-top: 15px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    max-height: 0;
+    border: 1px solid rgba(62, 221, 189, 0.3);
+  }
+
+  .results-content p {
+    padding: 20px 0;
+    margin: 0;
+    color: rgba(236, 240, 255, 0.8);
+    font-size: 1.1rem;
   }
 
   /* Footer */
@@ -423,24 +586,15 @@
     border-top: 1px solid rgba(62, 221, 189, 0.3);
   }
 
-  .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-
-  .footer-section {
-    flex: 1;
-    min-width: 250px;
+  .footer-message-container {
     text-align: center;
+    padding-bottom: 10px;
   }
 
   .footer-message {
     color: rgba(236, 240, 255, 0.8);
     font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .pointer {
@@ -461,21 +615,33 @@
   }
 
   .code-line {
-    border-top: 1px solid rgba(62, 221, 189, 0.2);
-    padding-top: 15px;
     text-align: center;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
     color: rgba(236, 240, 255, 0.6);
+    margin-bottom: 20px;
   }
 
-  .code-line a {
+  .horizontal-line {
+    border-top: 1px solid rgba(62, 221, 189, 0.2);
+    padding-top: 15px;
+  }
+
+  .social-links {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: rgba(236, 240, 255, 0.6);
+    margin-top: 10px;
+  }
+
+  .social-links a {
     color: rgba(236, 240, 255, 0.7);
     text-decoration: none;
     transition: all 0.2s ease;
   }
 
-  .code-line a:hover {
+  .social-links a:hover {
     color: #3eddbd;
     text-shadow: 0 0 8px rgba(62, 221, 189, 0.4);
   }
@@ -512,11 +678,6 @@
 
     .description {
       font-size: 1rem;
-    }
-
-    .footer-content {
-      flex-direction: column;
-      gap: 30px;
     }
 
     .accordion-button {
