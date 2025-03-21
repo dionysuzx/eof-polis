@@ -66,7 +66,7 @@
         Why This Conversation?
         <span class="toggle-icon">{expandedSection === 'why' ? '−' : '+'}</span>
       </button>
-      <div class="accordion-content" style="max-height: {expandedSection === 'why' ? '300px' : '0'}">
+      <div class="accordion-content" style="max-height: {expandedSection === 'why' ? '500px' : '0'}">
         <p>Productive conversation is crucial for Ethereum's progress. EOF is a contentious topic, and we want to find out ways to move forward through discovering common ground. This Polis conversation seeks to identify areas of agreement and thoughtful disagreements, providing insights that could help shape the future of planned upgrades like EOF.</p>
         <p>This is a v1 experiment created by Ethereum community members. We'll use the results of this experiment to learn how we can promote more productive conversations on Ethereum.</p>
       </div>
