@@ -19,6 +19,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>Let's talk about EOF</title>
+</svelte:head>
+
 <main>
   <div class="glitch-container">
     <div class="glitch-bg"></div>
@@ -31,7 +35,10 @@
         <h1>Let's talk about <span class="glitch-text" data-text="EOF">EOF</span></h1>
         <div class="description">
           <p>
-            EVM Object Format (EOF) is a proposed change to Ethereum's EVM. It is planned for Fusaka, but there is lots of push in both directions. This Polis conversation seeks to find common ground across diverse opinions.
+            EVM Object Format (EOF) is a proposed change to Ethereum's EVM. It is planned for Fusaka, but there is lots of push in both directions.
+          </p>
+          <p>
+            This Polis conversation seeks to find common ground.
           </p>
         </div>
       </div>
@@ -87,15 +94,15 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <p class="footer-message">Created with ❤️ by the Ethereum community</p>
+          <p class="footer-message">This was a v1 experiment created by Ethereum community members. We'd love to collaborate, hear your thoughts, and work together to help build more productive conversations on Ethereum. Let's chat!</p>
           <p class="pointer">↓</p>
         </div>
       </div>
       <div class="code-line">
-        <a href="https://warpcast.com/rz" target="_blank">@rz</a> •
-        <a href="https://warpcast.com/joshdavis.eth" target="_blank">@joshdavis.eth</a> •
         <a href="https://warpcast.com/chaskin.eth" target="_blank">@chaskin.eth</a> •
-        <a href="https://warpcast.com/dionysuz.eth" target="_blank">@dionysuz.eth (reach out to collab!)</a>
+        <a href="https://warpcast.com/dionysuz.eth" target="_blank">@dionysuz.eth</a> •
+        <a href="https://warpcast.com/joshdavis.eth" target="_blank">@joshdavis.eth</a> •
+        <a href="https://warpcast.com/rz" target="_blank">@rz</a>
       </div>
     </div>
   </footer>
@@ -473,76 +480,9 @@
     text-shadow: 0 0 8px rgba(62, 221, 189, 0.4);
   }
 
-  .neon-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #3eddbd;
-    margin-bottom: 1.5rem;
-    text-shadow:
-      0 0 5px rgba(62, 221, 189, 0.7),
-      0 0 15px rgba(62, 221, 189, 0.5),
-      0 0 25px rgba(62, 221, 189, 0.3);
-    letter-spacing: 0.5px;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .cyber-button {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 24px;
-    color: #3eddbd;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    background: rgba(15, 20, 35, 0.7);
-    border: 1px solid rgba(62, 221, 189, 0.5);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .cyber-button:hover {
-    background: rgba(25, 30, 45, 0.9);
-    box-shadow: 0 0 15px rgba(62, 221, 189, 0.5);
-  }
-
-  .cyber-button span {
-    position: absolute;
-    display: block;
-  }
-
-  .cyber-button span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #3eddbd);
-    animation: btn-anim1 2s linear infinite;
-    animation-delay: 0s;
-  }
-
   @keyframes btn-anim1 {
     0% { left: -100%; }
     50%, 100% { left: 100%; }
-  }
-
-  .cyber-button span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #3eddbd);
-    animation: btn-anim2 2s linear infinite;
-    animation-delay: 0.5s;
   }
 
   @keyframes btn-anim2 {
@@ -550,56 +490,14 @@
     50%, 100% { top: 100%; }
   }
 
-  .cyber-button span:nth-child(3) {
-    right: -100%;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #3eddbd);
-    animation: btn-anim3 2s linear infinite;
-    animation-delay: 1s;
-  }
-
   @keyframes btn-anim3 {
     0% { right: -100%; }
     50%, 100% { right: 100%; }
   }
 
-  .cyber-button span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #3eddbd);
-    animation: btn-anim4 2s linear infinite;
-    animation-delay: 1.5s;
-  }
-
   @keyframes btn-anim4 {
     0% { bottom: -100%; }
     50%, 100% { bottom: 100%; }
-  }
-
-  .cyber-button svg {
-    width: 20px;
-    height: 20px;
-    stroke: #3eddbd;
-  }
-
-  .contact-info {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.95rem;
-    color: rgba(236, 240, 255, 0.8);
-    background: rgba(15, 20, 35, 0.4);
-    border-radius: 4px;
-    padding: 12px;
-    border: 1px solid rgba(62, 221, 189, 0.2);
-  }
-
-  .contact-info strong {
-    color: #3eddbd;
   }
 
   /* Responsive Adjustments */
