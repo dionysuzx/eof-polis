@@ -119,9 +119,6 @@
 
   <footer>
     <div class="container">
-      <div class="code-line">
-        <div class="horizontal-line"></div>
-      </div>
       <div class="footer-message-container">
         <p class="footer-message">This is a v1 experiment created by Ethereum community members. We'd love to hear your thoughts and work together to build more productive conversations on Ethereum. Let's chat!</p>
         <p class="pointer">↓</p>
@@ -131,6 +128,12 @@
         <a href="https://warpcast.com/dionysuz.eth" target="_blank">@dionysuz.eth</a> •
         <a href="https://warpcast.com/joshdavis.eth" target="_blank">@joshdavis.eth</a> •
         <a href="https://warpcast.com/rz" target="_blank">@raymondz.eth</a>
+      </div>
+      <div class="code-line">
+        <div class="horizontal-line"></div>
+      </div>
+      <div class="github-link">
+        <a href="https://github.com/dionysuzx/eof-polis" target="_blank">Edit this site on GitHub</a>
       </div>
     </div>
   </footer>
@@ -581,7 +584,7 @@
   /* Footer */
   footer {
     background: linear-gradient(135deg, rgba(13, 32, 64, 0.9), rgba(41, 20, 76, 0.9));
-    padding: 60px 0 20px;
+    padding: 45px 0 20px;
     margin-top: auto;
     border-top: 1px solid rgba(62, 221, 189, 0.3);
   }
@@ -614,25 +617,13 @@
     }
   }
 
-  .code-line {
-    text-align: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    color: rgba(236, 240, 255, 0.6);
-    margin-bottom: 20px;
-  }
-
-  .horizontal-line {
-    border-top: 1px solid rgba(62, 221, 189, 0.2);
-    padding-top: 15px;
-  }
-
   .social-links {
     text-align: center;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
     color: rgba(236, 240, 255, 0.6);
     margin-top: 10px;
+    margin-bottom: 40px;
   }
 
   .social-links a {
@@ -642,6 +633,36 @@
   }
 
   .social-links a:hover {
+    color: #3eddbd;
+    text-shadow: 0 0 8px rgba(62, 221, 189, 0.4);
+  }
+
+  .code-line {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: rgba(236, 240, 255, 0.6);
+    margin: 0 0 5px 0;
+  }
+
+  .horizontal-line {
+    border-top: 1px solid rgba(62, 221, 189, 0.2);
+    padding-top: 15px;
+  }
+
+  .github-link {
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .github-link a {
+    color: rgba(236, 240, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+  }
+
+  .github-link a:hover {
     color: #3eddbd;
     text-shadow: 0 0 8px rgba(62, 221, 189, 0.4);
   }
