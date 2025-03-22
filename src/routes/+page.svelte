@@ -19,10 +19,6 @@
   });
 </script>
 
-<svelte:head>
-  <title>Let's talk about EOF</title>
-</svelte:head>
-
 <main>
   <div class="glitch-container">
     <div class="glitch-bg"></div>
