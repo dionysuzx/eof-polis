@@ -1,47 +1,68 @@
 # Ethereum Polis Conversation Template
 
-A template for creating parameterized Polis conversations about Ethereum topics. This project is built with SvelteKit and provides a beautiful, modern interface for hosting Polis conversations.
+A template for creating Polis conversations about Ethereum topics.
 
 ## Customizing for Your Topic
 
 To create a new conversation about a different Ethereum topic:
 
-1. Update the configuration in `src/config.ts`:
-   - Set your `topic` (e.g., "EIP-4844", "Account Abstraction")
-   - Write your `description` explaining the topic
-   - Define `whatIs` to explain the technical details
-   - Write `why` to explain the importance of the conversation
-   - Update `polisConversationId` with your Polis conversation ID
-   - Update `ogImage` path if you have a custom image
-   - Update `contributors` list with your team members
+1. **Update the configuration in `src/config.ts`**:
+   
+   All you need to do is edit these values in the `config` object:
+   
+   ```typescript
+   export const config: ConversationConfig = createConfig({
+     topic: "YourTopic",              // The main topic, e.g., "EOF", "EIP-4844"
+     description: "Your description", // A brief description of the topic
+     whatIs: "Explanation of what it is...", // Technical explanation
+     why: "Why this conversation matters...", // Importance of the conversation
+     polisConversationId: "your-polis-id", // From polis.io
+     contributors: [
+       { displayName: "Name", handle: "handle" },
+       // Add more contributors as needed
+     ]
+   });
+   ```
+   
+   All other metadata (site URL, page titles, etc.) will be automatically generated based on your topic!
 
-2. Update the Open Graph image:
-   - Create a new image for your topic
-   - Place it in the `static` directory
-   - Update the `ogImage` path in `config.ts`
+2. **Update the Open Graph image**:
+   - By default, it uses `/og-image.png` from the static directory
+   - To customize, simply place your new image in the `static` directory with the same name
 
-3. (Optional) Update the diagram:
+3. **(Optional) Update the diagram**:
    - Replace `static/education-diagram.png` with a relevant diagram for your topic
+
+## How It Works
+
+- **Configuration**: All site settings are defined in `src/config.ts`
+- **Metadata**: Page title, description, OpenGraph tags, etc. are dynamically generated
+- **Helpers**: The implementation details are hidden in `src/lib/configHelpers.ts`
 
 ## Development
 
 Once you've customized the configuration, start a development server:
 
 ```bash
-npm run dev
+bun install    # Install dependencies (first time only)
+bun dev        # Start development server
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun dev --open
 ```
 
-## Building
+## Building and Deployment
 
 To create a production version of your app:
 
 ```bash
-npm run build
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `bun run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+The site is designed to be easily deployed to Cloudflare Pages or any similar static hosting service.
+
+## License
+
+MIT License
