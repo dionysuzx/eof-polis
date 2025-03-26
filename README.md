@@ -1,22 +1,31 @@
-# sv
+# Ethereum Polis Conversation Template
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A template for creating parameterized Polis conversations about Ethereum topics. This project is built with SvelteKit and provides a beautiful, modern interface for hosting Polis conversations.
 
-## Creating a project
+## Customizing for Your Topic
 
-If you're seeing this, you've probably already done this step. Congrats!
+To create a new conversation about a different Ethereum topic:
 
-```bash
-# create a new project in the current directory
-npx sv create
+1. Update the configuration in `src/config.ts`:
+   - Set your `topic` (e.g., "EIP-4844", "Account Abstraction")
+   - Write your `description` explaining the topic
+   - Define `whatIs` to explain the technical details
+   - Write `why` to explain the importance of the conversation
+   - Update `polisConversationId` with your Polis conversation ID
+   - Update `ogImage` path if you have a custom image
+   - Update `contributors` list with your team members
 
-# create a new project in my-app
-npx sv create my-app
-```
+2. Update the Open Graph image:
+   - Create a new image for your topic
+   - Place it in the `static` directory
+   - Update the `ogImage` path in `config.ts`
 
-## Developing
+3. (Optional) Update the diagram:
+   - Replace `static/education-diagram.png` with a relevant diagram for your topic
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Development
+
+Once you've customized the configuration, start a development server:
 
 ```bash
 npm run dev

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { config } from '../config';
 
   let expandedSection: string | null = null;
 
@@ -28,10 +29,10 @@
     <div class="container">
       <div class="hero-content">
         <div class="neon-badge">An Ethereum Social Experiment</div>
-        <h1>Let's talk about <span class="glitch-text" data-text="EOF">EOF</span></h1>
+        <h1>Let's talk about <span class="glitch-text" data-text={config.topic}>{config.topic}</span></h1>
         <div class="description">
           <p>
-            EVM Object Format (EOF) is a proposed change to Ethereum's EVM. It is planned for Fusaka, but there is lots of push in both directions.
+            {config.description}
           </p>
           <p>
             This Polis conversation seeks to find common ground.
@@ -45,13 +46,13 @@
     <div class="accordion-section">
       <button class="accordion-button {expandedSection === 'what' ? 'active' : ''}" on:click={() => toggleSection('what')}>
         <span class="accordion-icon">❓</span>
-        What is EOF?
+        What is {config.topic}?
         <span class="toggle-icon">{expandedSection === 'what' ? '−' : '+'}</span>
       </button>
       <div class="accordion-content" style="max-height: {expandedSection === 'what' ? '500px' : '0'}">
-        <p>EOF (EVM Object Format) is a proposed restructuring of EVM bytecode into a more formalized container format with separate sections for code and data. It aims to make the EVM more efficient, secure, and easier to analyze.</p>
-        <div class="eof-diagram">
-          <img src="/eof-diagram.png" alt="EOF Structure Diagram" />
+        <p>{config.whatIs}</p>
+        <div class="education-diagram">
+          <img src="/education-diagram.png" alt="{config.topic} Structure Diagram" />
           <div class="image-credit">Image source: <a href="https://inevitableeth.com/en/home/ethereum/upgrades/execution-updates/eof" target="_blank">Inevitable ETH</a></div>
         </div>
         <p class="learn-more">Want to learn more? Check out this <a href="https://inevitableeth.com/en/home/ethereum/upgrades/execution-updates/eof" target="_blank">detailed technical overview</a>.</p>
@@ -63,7 +64,7 @@
         <span class="toggle-icon">{expandedSection === 'why' ? '−' : '+'}</span>
       </button>
       <div class="accordion-content" style="max-height: {expandedSection === 'why' ? '500px' : '0'}">
-        <p>Productive conversation is crucial for Ethereum's progress. EOF is a contentious topic, and we want to find out ways to move forward through discovering common ground. This Polis conversation seeks to identify areas of agreement and thoughtful disagreements, providing insights that could help shape the future of planned upgrades like EOF.</p>
+        <p>{config.why}</p>
         <p>This is a v1 experiment created by Ethereum community members. We'll use the results of this experiment to learn how we can promote more productive conversations on Ethereum.</p>
       </div>
 
@@ -85,18 +86,18 @@
           <span></span>
           <span></span>
         </div>
-        <div class="terminal-title">evm_discuss.sh --topic=EOF</div>
+        <div class="terminal-title">evm_discuss.sh --topic={config.topic}</div>
       </div>
       <div class="polis-cta">
         <div class="polis-cta-content">
           <span class="polis-cta-icon">💭</span>
           <div class="polis-cta-text">
             <h3>Join the Conversation</h3>
-            <p>Vote on statements (agree/disagree/pass) and add your own thoughts to help shape the future of EOF.</p>
+            <p>Vote on statements (agree/disagree/pass) and add your own thoughts to help shape the future of {config.topic}.</p>
           </div>
         </div>
       </div>
-      <div class='polis' data-conversation_id='6ah2kbkpct' data-ucsf="false"></div>
+      <div class='polis' data-conversation_id={config.polisConversationId} data-ucsf="false"></div>
     </div>
 
     <div class="results-section">
@@ -118,10 +119,9 @@
         <p class="pointer">↓</p>
       </div>
       <div class="social-links">
-        <a href="https://warpcast.com/chaskin.eth" target="_blank">@chaskin.eth</a> •
-        <a href="https://warpcast.com/dionysuz.eth" target="_blank">@dionysuz.eth</a> •
-        <a href="https://warpcast.com/joshdavis.eth" target="_blank">@joshdavis.eth</a> •
-        <a href="https://warpcast.com/rz" target="_blank">@raymondz.eth</a>
+        {#each config.contributors as contributor, i}
+          <a href="https://warpcast.com/{contributor.handle}" target="_blank">@{contributor.displayName}</a>{#if i < config.contributors.length - 1}<span class="bullet">•</span>{/if}
+        {/each}
       </div>
       <div class="code-line">
         <div class="horizontal-line"></div>
@@ -378,7 +378,7 @@
     border-bottom: 1px solid rgba(62, 221, 189, 0.3);
   }
 
-  .eof-diagram {
+  .education-diagram {
     margin: 1rem 0;
     text-align: center;
     max-width: 600px;
@@ -386,7 +386,7 @@
     margin-right: auto;
   }
 
-  .eof-diagram img {
+  .education-diagram img {
     max-width: 100%;
     width: 90%;
     height: auto;
@@ -615,6 +615,10 @@
     color: rgba(236, 240, 255, 0.6);
     margin-top: 10px;
     margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
   }
 
   .social-links a {
@@ -626,6 +630,22 @@
   .social-links a:hover {
     color: #3eddbd;
     text-shadow: 0 0 8px rgba(62, 221, 189, 0.4);
+  }
+
+  .bullet {
+    margin: 0 6px;
+    color: rgba(236, 240, 255, 0.6);
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .bullet {
+      display: inline;
+    }
+    
+    .social-links {
+      gap: 4px;
+    }
   }
 
   .code-line {
@@ -695,6 +715,10 @@
     .accordion-button {
       padding: 12px 15px;
       font-size: 1rem;
+    }
+    
+    .social-links {
+      padding: 0 15px;
     }
   }
 
