@@ -36,6 +36,7 @@ export interface ConversationConfig {
  * - whatIs: A longer explanation of what the topic is
  * - why: Explanation of why this conversation matters
  * - polisConversationId: The Polis conversation ID
+ * - siteUrl: The URL for the site
  * - learnMoreLink: Link to more detailed information about the topic
  * - learnMoreText: Text to display for the learn more link
  * - imageCreditLink: Link to the source of the diagram image
@@ -44,7 +45,7 @@ export interface ConversationConfig {
  * - githubRepoUrl: URL to the GitHub repository
  * - contributors: List of contributors with display names and handles
  * 
- * Everything else (site URL, titles, etc.) will be generated automatically
+ * Everything else (site titles, etc.) will be generated automatically
  * based on the topic.
  */
 export const config: ConversationConfig = createConfig({
@@ -53,6 +54,7 @@ export const config: ConversationConfig = createConfig({
   whatIs: "Native rollups use an EXECUTE precompile that exposes the L1 EVM execution engine to Layer 2 solutions. This allows rollups to verify EVM state transitions for batches of transactions with the same security guarantees as Ethereum's L1. Think of them as programmable execution shards that wrap the precompile within a derivation function to handle system logic like sequencing, bridging, and governance.",
   why: "The Ethereum community is discussing whether native rollups represent the best path forward for L2 scaling. While they offer improved security by eliminating trusted intermediaries, several practical challenges remain. Some L2 designs require custom transaction types, different gas accounting, and precompiles not supported by Ethereum L1. This conversation seeks to find common ground on how native rollup technology should evolve.",
   polisConversationId: "2scakk4srj",
+  siteUrl: "https://native-rollups-polis.pages.dev",
   learnMoreLink: "https://ethresear.ch/t/native-rollups-superpowers-from-l1-execution/21517",
   learnMoreText: "detailed technical proposal",
   imageCreditLink: "https://ethresear.ch/t/native-rollups-superpowers-from-l1-execution/21517",

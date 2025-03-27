@@ -37,6 +37,7 @@ export function createConfig(options: {
   whatIs: string;
   why: string;
   polisConversationId: string;
+  siteUrl: string;
   ogImage?: string;
   twitterCardType?: string;
   learnMoreLink: string;
@@ -53,6 +54,7 @@ export function createConfig(options: {
     whatIs,
     why,
     polisConversationId,
+    siteUrl,
     ogImage = "/og-image.png",
     twitterCardType = "summary_large_image",
     learnMoreLink,
@@ -71,7 +73,7 @@ export function createConfig(options: {
     why,
     polisConversationId,
     ogImage,
-    siteUrl: generateSiteUrl(topic),
+    siteUrl,
     siteName: generateSiteName(topic),
     twitterCardType,
     pageTitle: generatePageTitle(topic),
