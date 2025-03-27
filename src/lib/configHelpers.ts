@@ -1,13 +1,6 @@
 import type { ConversationConfig } from '../config';
 
 /**
- * Helper function to generate site URL from topic
- */
-export function generateSiteUrl(topic: string): string {
-  return `https://${topic.toLowerCase()}-polis.pages.dev`;
-}
-
-/**
  * Helper function to generate site name from topic
  */
 export function generateSiteName(topic: string): string {
