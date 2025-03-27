@@ -43,6 +43,7 @@ export function createConfig(options: {
   learnMoreText: string;
   imageCreditLink: string;
   imageCreditText: string;
+  educationDiagramName: string;
   githubRepoUrl: string;
   contributors: { displayName: string; handle: string }[];
 }): ConversationConfig {
@@ -58,6 +59,7 @@ export function createConfig(options: {
     learnMoreText,
     imageCreditLink,
     imageCreditText,
+    educationDiagramName,
     githubRepoUrl,
     contributors
   } = options;
@@ -78,6 +80,7 @@ export function createConfig(options: {
     learnMoreText,
     imageCreditLink,
     imageCreditText,
+    educationDiagramName,
     githubRepoUrl,
     contributors
   };

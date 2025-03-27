@@ -52,7 +52,7 @@
       <div class="accordion-content" style="max-height: {expandedSection === 'what' ? '500px' : '0'}">
         <p>{config.whatIs}</p>
         <div class="education-diagram">
-          <img src="/education-diagram.png" alt="{config.topic} Structure Diagram" />
+          <img src="/{config.educationDiagramName}" alt="{config.topic} Structure Diagram" />
           <div class="image-credit">Image source: <a href="{config.imageCreditLink}" target="_blank">{config.imageCreditText}</a></div>
         </div>
         <p class="learn-more">Want to learn more? Check out this <a href="{config.learnMoreLink}" target="_blank">{config.learnMoreText}</a>.</p>
@@ -93,7 +93,7 @@
           <span class="polis-cta-icon">💭</span>
           <div class="polis-cta-text">
             <h3>Join the Conversation</h3>
-            <p>Vote on statements (agree/disagree/pass) and add your own thoughts to help shape the future of {config.topic}.</p>
+            <p>Vote on statements (agree/disagree/pass) and add your own thoughts to help shape the future of {config.topic}. Should L2s inherit L1 security through native execution?</p>
           </div>
         </div>
       </div>
