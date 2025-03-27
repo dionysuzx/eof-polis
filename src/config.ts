@@ -15,6 +15,11 @@ export interface ConversationConfig {
   twitterCardType: string;
   pageTitle: string;
   ogTitle: string;
+  learnMoreLink: string;
+  learnMoreText: string;
+  imageCreditLink: string;
+  imageCreditText: string;
+  githubRepoUrl: string;
   contributors: {
     displayName: string;
     handle: string;
@@ -30,6 +35,11 @@ export interface ConversationConfig {
  * - whatIs: A longer explanation of what the topic is
  * - why: Explanation of why this conversation matters
  * - polisConversationId: The Polis conversation ID
+ * - learnMoreLink: Link to more detailed information about the topic
+ * - learnMoreText: Text to display for the learn more link
+ * - imageCreditLink: Link to the source of the diagram image
+ * - imageCreditText: Text to display for the image credit
+ * - githubRepoUrl: URL to the GitHub repository
  * - contributors: List of contributors with display names and handles
  * 
  * Everything else (site URL, titles, etc.) will be generated automatically
@@ -41,6 +51,11 @@ export const config: ConversationConfig = createConfig({
   whatIs: "EOF (EVM Object Format) is a proposed restructuring of EVM bytecode into a more formalized container format with separate sections for code and data. It aims to make the EVM more efficient, secure, and easier to analyze.",
   why: "Productive conversation is crucial for Ethereum's progress. EOF is a contentious topic, and we want to find out ways to move forward through discovering common ground. This Polis conversation seeks to identify areas of agreement and thoughtful disagreements, providing insights that could help shape the future of planned upgrades like EOF.",
   polisConversationId: "6ah2kbkpct",
+  learnMoreLink: "https://inevitableeth.com/en/home/ethereum/upgrades/execution-updates/eof",
+  learnMoreText: "detailed technical overview",
+  imageCreditLink: "https://inevitableeth.com/en/home/ethereum/upgrades/execution-updates/eof",
+  imageCreditText: "Inevitable ETH",
+  githubRepoUrl: "https://github.com/dionysuzx/eof-polis",
   contributors: [
     { displayName: "chaskin.eth", handle: "chaskin.eth" },
     { displayName: "dionysuz.eth", handle: "dionysuz.eth" },

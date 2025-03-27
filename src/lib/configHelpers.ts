@@ -39,6 +39,11 @@ export function createConfig(options: {
   polisConversationId: string;
   ogImage?: string;
   twitterCardType?: string;
+  learnMoreLink: string;
+  learnMoreText: string;
+  imageCreditLink: string;
+  imageCreditText: string;
+  githubRepoUrl: string;
   contributors: { displayName: string; handle: string }[];
 }): ConversationConfig {
   const {
@@ -49,6 +54,11 @@ export function createConfig(options: {
     polisConversationId,
     ogImage = "/og-image.png",
     twitterCardType = "summary_large_image",
+    learnMoreLink,
+    learnMoreText,
+    imageCreditLink,
+    imageCreditText,
+    githubRepoUrl,
     contributors
   } = options;
 
@@ -64,6 +74,11 @@ export function createConfig(options: {
     twitterCardType,
     pageTitle: generatePageTitle(topic),
     ogTitle: generateOgTitle(topic),
+    learnMoreLink,
+    learnMoreText,
+    imageCreditLink,
+    imageCreditText,
+    githubRepoUrl,
     contributors
   };
 } 

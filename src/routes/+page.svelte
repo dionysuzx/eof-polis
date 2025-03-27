@@ -53,9 +53,9 @@
         <p>{config.whatIs}</p>
         <div class="education-diagram">
           <img src="/education-diagram.png" alt="{config.topic} Structure Diagram" />
-          <div class="image-credit">Image source: <a href="https://inevitableeth.com/en/home/ethereum/upgrades/execution-updates/eof" target="_blank">Inevitable ETH</a></div>
+          <div class="image-credit">Image source: <a href="{config.imageCreditLink}" target="_blank">{config.imageCreditText}</a></div>
         </div>
-        <p class="learn-more">Want to learn more? Check out this <a href="https://inevitableeth.com/en/home/ethereum/upgrades/execution-updates/eof" target="_blank">detailed technical overview</a>.</p>
+        <p class="learn-more">Want to learn more? Check out this <a href="{config.learnMoreLink}" target="_blank">{config.learnMoreText}</a>.</p>
       </div>
 
       <button class="accordion-button {expandedSection === 'why' ? 'active' : ''}" on:click={() => toggleSection('why')}>
@@ -127,7 +127,7 @@
         <div class="horizontal-line"></div>
       </div>
       <div class="github-link">
-        <a href="https://github.com/dionysuzx/eof-polis" target="_blank">Edit this site on GitHub</a>
+        <a href="{config.githubRepoUrl}" target="_blank">Edit this site on GitHub</a>
       </div>
     </div>
   </footer>
