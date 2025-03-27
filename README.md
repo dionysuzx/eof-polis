@@ -1,38 +1,38 @@
-# sv
+# Ethereum Polis Conversation Template
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A template for creating Polis conversations about Ethereum topics.
 
-## Creating a project
+## Customizing for Your Topic
 
-If you're seeing this, you've probably already done this step. Congrats!
+To create a new conversation about a different Ethereum topic:
 
-```bash
-# create a new project in the current directory
-npx sv create
+- [ ] Update your configuration in `./src/config.ts`.
+- [ ] Update the images:
+  - [ ] Open Graph image in `./static/og-image.png`
+  - [ ] Educational diagram in `./static/educational-diagram.png`
+  - [ ] Favicon in `./static/favicon.svg`
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Development
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've customized the configuration, start a development server:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install    # Install dependencies (first time only)
+bun dev        # Start development server
 ```
 
-## Building
+## Building and Deployment
 
 To create a production version of your app:
 
 ```bash
-npm run build
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `bun run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+The site is designed to be easily deployed to Cloudflare Pages or any similar static hosting service.
+
+## License
+
+MIT License
