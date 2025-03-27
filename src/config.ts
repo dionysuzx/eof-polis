@@ -49,16 +49,16 @@ export interface ConversationConfig {
  */
 export const config: ConversationConfig = createConfig({
   topic: "Native Rollups",
-  description: "Native rollups are a proposed approach for EVM-equivalent rollups to inherit Ethereum's security model while eliminating the need for security councils.",
+  description: "Native rollups are a proposed endgame for scaling Ethereum blockspace.",
   whatIs: "Native rollups use an EXECUTE precompile that exposes the L1 EVM execution engine to Layer 2 solutions. This allows rollups to verify EVM state transitions for batches of transactions with the same security guarantees as Ethereum's L1. Think of them as programmable execution shards that wrap the precompile within a derivation function to handle system logic like sequencing, bridging, and governance.",
   why: "The Ethereum community is discussing whether native rollups represent the best path forward for L2 scaling. While they offer improved security by eliminating trusted intermediaries, several practical challenges remain. Some L2 designs require custom transaction types, different gas accounting, and precompiles not supported by Ethereum L1. This conversation seeks to find common ground on how native rollup technology should evolve.",
-  polisConversationId: "7cr3hndgtm",
+  polisConversationId: "2scakk4srj",
   learnMoreLink: "https://ethresear.ch/t/native-rollups-superpowers-from-l1-execution/21517",
   learnMoreText: "detailed technical proposal",
   imageCreditLink: "https://ethresear.ch/t/native-rollups-superpowers-from-l1-execution/21517",
   imageCreditText: "Ethereum Research",
   educationDiagramName: "education-diagram.svg",
-  githubRepoUrl: "https://github.com/dionysuzx/eof-polis",
+  githubRepoUrl: "https://github.com/dionysuzx/native-rollups-polis",
   contributors: [
     { displayName: "chaskin.eth", handle: "chaskin.eth" },
     { displayName: "dionysuz.eth", handle: "dionysuz.eth" },
